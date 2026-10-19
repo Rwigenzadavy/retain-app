@@ -48,12 +48,38 @@ npm install
 ```
 
 ### Create a .env file in the backend folder
-
+```
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=5000
+```
 
 ```bash     
 npm run seed
 npm run dev
 ```
+
+### Frontend Setup
+```bash
+cd frontend
+npm install --legacy-peer-deps
+npm run dev
+```
+
+### API Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| POST | /api/auth/register | Register user | Public |
+| POST | /api/auth/login | Login user | Public |
+| GET | /api/expenses | Get all expenses | User |
+| POST | /api/expenses | Create expense | User |
+| PUT | /api/expenses/:id | Update expense | User |
+| DELETE | /api/expenses/:id | Delete expense | User |
+| GET | /api/budget | Get budget | User |
+| POST | /api/budget | Set/update budget | User |
+| GET | /api/categories | Get categories | User |
+| POST | /api/categories | Create category | Admin |
+| PUT | /api/categories/:id | Update category | Admin |
+| DELETE | /api/categories/:id | Delete category | Admin |
+| GET | /api/admin/insights | Get platform insights | Admin |
